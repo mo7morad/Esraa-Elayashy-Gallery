@@ -1,0 +1,272 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes rainbow {
+  0% { color: red; }
+  14% { color: orange; }
+  28% { color: yellow; }
+  42% { color: green; }
+  57% { color: blue; }
+  71% { color: indigo; }
+  85% { color: violet; }
+  100% { color: red; }
+}
+
+.animate-rainbow {
+  animation: rainbow 3s linear infinite;
+}
+
+.rtl-text {
+  direction: rtl;
+  text-align: right;
+}
+
+@keyframes multi-hue-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-multi-hue-gradient {
+  background-image: linear-gradient(
+    to right,
+    #60a5fa,
+    #3b82f6,
+    #8b5cf6,
+    #d946ef,
+    #ec4899,
+    #8b5cf6,
+    #3b82f6,
+    #60a5fa
+  );
+  background-size: 300% auto;
+  animation: multi-hue-gradient 8s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 15s ease infinite;
+  background-size: 200% 200%;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+@keyframes border-flow {
+  0% { border-image-source: linear-gradient(45deg, #ec4899, #8b5cf6, #3b82f6); }
+  50% { border-image-source: linear-gradient(45deg, #3b82f6, #ec4899, #8b5cf6); }
+  100% { border-image-source: linear-gradient(45deg, #8b5cf6, #3b82f6, #ec4899); }
+}
+
+.animate-border-flow {
+  animation: border-flow 8s linear infinite;
+  border-image-slice: 1;
+}
+
+@keyframes border-glow {
+  0% { 
+    box-shadow: 0 0 10px rgba(236, 72, 153, 0.5),
+                0 0 20px rgba(139, 92, 246, 0.3),
+                0 0 30px rgba(59, 130, 246, 0.2);
+  }
+  50% { 
+    box-shadow: 0 0 15px rgba(236, 72, 153, 0.7),
+                0 0 25px rgba(139, 92, 246, 0.5),
+                0 0 35px rgba(59, 130, 246, 0.3);
+  }
+  100% { 
+    box-shadow: 0 0 10px rgba(236, 72, 153, 0.5),
+                0 0 20px rgba(139, 92, 246, 0.3),
+                0 0 30px rgba(59, 130, 246, 0.2);
+  }
+}
+
+.animate-border-glow {
+  animation: border-glow 3s ease-in-out infinite;
+}
+
+/* Add these new styles */
+.loader {
+  display: flex;
+  margin: 0.25em 0;
+  gap: 0.5em;
+  align-items: center;
+  justify-content: center;
+}
+
+.w-2 {
+  width: 0.5em;
+}
+
+.dash {
+  animation: dashArray 2.5s ease-in-out infinite,
+    dashOffset 2.5s linear infinite;
+}
+
+.spin {
+  animation: spinDashArray 2.5s ease-in-out infinite,
+    spin 10s ease-in-out infinite,
+    dashOffset 2.5s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes dashArray {
+  0% {
+    stroke-dasharray: 0 1 359 0;
+  }
+  50% {
+    stroke-dasharray: 0 359 1 0;
+  }
+  100% {
+    stroke-dasharray: 359 1 0 0;
+  }
+}
+
+@keyframes spinDashArray {
+  0% {
+    stroke-dasharray: 270 90;
+  }
+  50% {
+    stroke-dasharray: 0 360;
+  }
+  100% {
+    stroke-dasharray: 270 90;
+  }
+}
+
+@keyframes dashOffset {
+  0% {
+    stroke-dashoffset: 365;
+  }
+  100% {
+    stroke-dashoffset: 5;
+  }
+}
+
+@keyframes spin {
+  0% {
+    rotate: 0deg;
+  }
+  12.5%, 25% {
+    rotate: 270deg;
+  }
+  37.5%, 50% {
+    rotate: 540deg;
+  }
+  62.5%, 75% {
+    rotate: 810deg;
+  }
+  87.5%, 100% {
+    rotate: 1080deg;
+  }
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 15s ease infinite;
+  background-size: 200% 200%;
+}
