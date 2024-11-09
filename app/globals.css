@@ -270,3 +270,7 @@ body {
   animation: gradient-x 15s ease infinite;
   background-size: 200% 200%;
 }
+
+.direction-rtl {
+  direction: rtl;
+}

@@ -49,7 +49,7 @@ export default function ContactPage() {
               <h2 className="text-2xl font-semibold mb-4">Let's Connect</h2>
               <p className="text-gray-300 mb-6">
                 I'd love to hear from you! Whether you're interested in my artwork, 
-                photography services, or just want to say hello, feel free to reach out.
+                photography, or just want to say hello, feel free to reach out.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
@@ -58,7 +58,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-gray-300">contact@esraaelayashy.com</p>
+                    <p className="text-gray-300">esraaelayashy@gmail.com</p>
                   </div>
                 </div>
                 {/* Add more contact methods if needed */}

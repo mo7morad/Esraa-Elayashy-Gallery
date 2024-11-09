@@ -20,6 +20,7 @@ type ImageType = {
   date: string
   description: string
   category: string
+  isArabic?: boolean
 }
 
 // Move images array outside component to prevent recreation on each render
@@ -49,8 +50,9 @@ const images: ImageType[] = [
     src: "/images/4@February_6_2018.jpg",
     alt: "Blue butterfly artwork",
     date: "February 6, 2018",
-    description: "🙈💙 فراشتي",
-    category: "Art"
+    description: "فراشتي 🙈💙",
+    category: "Art",
+    isArabic: true
   },
   {
     src: "/images/5@March_3_2018.jpg",
@@ -294,8 +296,9 @@ const images: ImageType[] = [
     src: "/images/2_facebook@29_March_2018.jpg",
     alt: "Placeholder",
     date: "March 29, 2018",
-    description: "🌌 ارزقنا راحة البال و حياة مليئة بكل ما يرضيك",
-    category: "Category Placeholder"
+    description: "🌌 وارزقنا راحة البال وحياة مليئة بكل ما يرضيك",
+    category: "Category Placeholder",
+    isArabic: true
   },
   {
     src: "/images/3_facebook@14_April_2018.jpg",
@@ -308,15 +311,17 @@ const images: ImageType[] = [
     src: "/images/4_facebook@29_June_2018.jpg",
     alt: "Placeholder",
     date: "June 29, 2018",
-    description: "حين تعثر على الجمال في قلبك ستعثر عليه في كل قلب ،، 💜",
-    category: "Category Placeholder"
+    description: "حين تعثر على الجمال في قلبك ستعثر عليه في كل قلب 💜",
+    category: "Category Placeholder",
+    isArabic: true
   },
   {
     src: "/images/5_facebook@31_January_2019.jpg",
     alt: "Placeholder",
     date: "January 31, 2018",
-    description: "ببطء .. ، لكن بثبات و بنفس الطريقة التي يحول بها الخريف شكل الغابة ، حولتني آلاف التغييرات الصغيرة إلى شخص آخر",
-    category: "Category Placeholder"
+    description: "ببطء.. لكن بثبات وبنفس الطريقة التي يحول بها الخريف شكل الغابة، حولتني آلاف التغييرات الصغيرة إلى شخص آخر",
+    category: "Category Placeholder",
+    isArabic: true
   },
   {
     src: "/images/6_facebook@21_June_2019.jpg",
@@ -369,7 +374,11 @@ function GalleryItem({ image, index, onClick }: {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
         <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-          <p className={`${inter.className} text-white text-sm font-medium mb-1 line-clamp-2`}>
+          <p className={cn(
+            inter.className,
+            "text-white text-sm font-medium mb-1 line-clamp-2",
+            image.isArabic && "text-right direction-rtl"
+          )}>
             {image.description}
           </p>
           <p className="text-white/70 text-xs">
@@ -691,7 +700,11 @@ export function ModernDarkArtGalleryComponent() {
                         {filteredImages[selectedImage].date}
                       </h2>
                       <p className="text-sm text-gray-400 mb-4">{filteredImages[selectedImage].category}</p>
-                      <p className={`${inter.className} text-sm text-white leading-relaxed`}>
+                      <p className={cn(
+                        inter.className,
+                        "text-sm text-white leading-relaxed",
+                        filteredImages[selectedImage].isArabic && "text-right direction-rtl"
+                      )}>
                         {filteredImages[selectedImage].description}
                       </p>
                     </motion.div>
