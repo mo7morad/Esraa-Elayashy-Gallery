@@ -25,7 +25,7 @@ export function AnimatedOpeningText({ title, subtitle, className }: AnimatedOpen
   }, [])
 
   return (
-    <div className="landing-card">
+    <div className={cn("landing-card", className)}>
       <div className="relative">
         <div className="overflow-hidden">
           <motion.h1 
