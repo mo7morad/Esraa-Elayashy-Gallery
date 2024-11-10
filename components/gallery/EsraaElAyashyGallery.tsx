@@ -9,7 +9,6 @@ import { Button } from '@/components/ui/button'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { inter, playfair, ibmPlexArabic } from '@/lib/fonts'
-import { useInView } from 'framer-motion'
 import { ScrollToTop } from '@/components/ui/ScrollToTop'
 import { ElAyashyLoader } from '@/components/ui/ElAyashyLoader'
 
@@ -345,46 +344,26 @@ const sortedImages = [...images].sort((a, b) => new Date(b.date).getTime() - new
 // Get unique categories once
 const uniqueCategories = ['all', ...Array.from(new Set(sortedImages.map(img => img.category.toLowerCase())))]
 
-// Add these new component above the main component
-function GalleryItem({ image, index, onClick }: { 
-  image: ImageType; 
-  index: number; 
-  onClick: () => void 
-}) {
+// Update the GalleryItem component
+function GalleryItem({ image, index }: { image: ImageType; index: number }) {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "100px" })
   
   return (
-    <motion.div
+    <motion.div 
       ref={ref}
-      key={index}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.6, delay: index % 4 * 0.1 }}
-      className="relative aspect-square overflow-hidden rounded-lg cursor-pointer group"
-      onClick={onClick}
+      className="gallery-card-wrapper aspect-square"
+      whileHover={{ scale: 1.02 }}
+      transition={{ duration: 0.2 }}
     >
-      <Image
-        src={image.src}
-        alt={image.alt}
-        layout="fill"
-        objectFit="cover"
-        className="transition-all duration-700 group-hover:scale-110 group-hover:brightness-90 w-full h-full object-cover"
-        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
-        <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-          <p className={cn(
-            inter.className,
-            "text-white text-sm font-medium mb-1 line-clamp-2",
-            image.isArabic && "text-right direction-rtl"
-          )}>
-            {image.description}
-          </p>
-          <p className="text-white/70 text-xs">
-            {image.category} • {image.date}
-          </p>
-        </div>
+      <div className="gallery-card-inner h-full">
+        <Image
+          src={image.src}
+          alt={image.alt}
+          width={500}
+          height={500}
+          className="w-full h-full object-cover"
+          priority={index < 4} // Prioritize loading first 4 images
+        />
       </div>
     </motion.div>
   )
@@ -615,7 +594,7 @@ export function ModernDarkArtGalleryComponent() {
                   delay: 1.5
                 }}
               >
-                🌷
+                
               </motion.span>
             </div>
           </div>
@@ -640,14 +619,15 @@ export function ModernDarkArtGalleryComponent() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {filteredImages.map((image, index) => (
-            <GalleryItem
-              key={index}
-              image={image}
-              index={index}
+            <div 
+              key={index} 
               onClick={() => setSelectedImage(index)}
-            />
+              className="cursor-pointer aspect-square"
+            >
+              <GalleryItem image={image} index={index} />
+            </div>
           ))}
         </div>
 

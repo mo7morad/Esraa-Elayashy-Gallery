@@ -25,16 +25,7 @@ export function AnimatedOpeningText({ title, subtitle, className }: AnimatedOpen
   }, [])
 
   return (
-    <div className={cn(
-      "relative overflow-hidden rounded-2xl p-8",
-      "shadow-[0_0_30px_rgba(0,0,0,0.3)]",
-      "transition-all duration-500",
-      "border-2 border-transparent",
-      "bg-gradient-to-br from-gray-900/90 to-gray-800/90",
-      "before:absolute before:inset-0 before:-z-10 before:animate-gradient-x before:bg-gradient-to-r before:from-pink-500/20 before:via-purple-500/20 before:to-blue-500/20 before:blur-xl",
-      "after:absolute after:inset-0 after:rounded-2xl after:p-[2px] after:bg-gradient-to-r after:from-pink-500 after:via-purple-500 after:to-blue-500",
-      className
-    )}>
+    <div className="landing-card">
       <div className="relative">
         <div className="overflow-hidden">
           <motion.h1 
