@@ -81,9 +81,9 @@ export default function ContactPage() {
                         </div>
                       </div>
                       <div className="about">
-                        <p>Egyptian 🇪🇬</p>
-                        <p>Artist & Photographer 🎨📸</p>
-                        <p>Beauty is all around, if u just open ur heart to see ♥️</p>
+                        <p>- Egyptian 🇪🇬</p>
+                        <p>- Artist & Photographer 🎨📸</p>
+                        <p>- Beauty is all around, if u just open ur heart to see ♥️</p>
                       </div>
                     </div>
                   </div>
