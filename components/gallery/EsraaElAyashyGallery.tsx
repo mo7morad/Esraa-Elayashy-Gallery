@@ -519,8 +519,8 @@ export function ModernDarkArtGalleryComponent() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ 
-                  duration: 1.2,
-                  delay: 0.5,
+                  duration: 0.6,
+                  delay: 0.2,
                   ease: [0.25, 0.1, 0.25, 1]
                 }}
               >
@@ -530,8 +530,8 @@ export function ModernDarkArtGalleryComponent() {
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
-                      duration: 1,
-                      delay: 0.8 + index * 0.1,
+                      duration: 0.6,
+                      delay: 0.3 + index * 0.05,
                       ease: [0.25, 0.1, 0.25, 1]
                     }}
                     className="inline-block"
@@ -545,8 +545,8 @@ export function ModernDarkArtGalleryComponent() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ 
-                  duration: 1,
-                  delay: 2.2,
+                  duration: 0.6,
+                  delay: 1.2,
                   ease: [0.25, 0.1, 0.25, 1]
                 }}
               >

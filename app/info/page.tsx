@@ -32,15 +32,18 @@ export default function InfoPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <div className="aspect-[3/4] relative overflow-hidden rounded-xl">
-              <Image
-                src="/images/selfie@27_May_2022.jpg"
-                alt="Esraa ElAyashy"
-                layout="fill"
-                objectFit="cover"
-                className="hover:scale-105 transition-transform duration-700"
-                priority
-              />
+            <div className="relative aspect-[3/4] rounded-xl overflow-hidden card-container">
+              <div className="rotating-gradient"></div>
+              <div className="image-container">
+                <Image
+                  src="/images/selfie@27_May_2022.jpg"
+                  alt="Esraa ElAyashy"
+                  layout="fill"
+                  objectFit="cover"
+                  className="hover:scale-105 transition-transform duration-700"
+                  priority
+                />
+              </div>
             </div>
           </motion.div>
 

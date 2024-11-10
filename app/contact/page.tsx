@@ -34,6 +34,7 @@ export default function ContactPage() {
         <motion.h1 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className={`${playfair.className} text-5xl font-bold mb-8 text-transparent animate-multi-hue-gradient`}
         >
           Get in Touch
@@ -43,16 +44,33 @@ export default function ContactPage() {
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
             className="space-y-6"
           >
             <div className={`${inter.className}`}>
-              <h2 className="text-2xl font-semibold mb-4">Let's Connect</h2>
-              <p className="text-gray-300 mb-6">
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
+                className="text-2xl font-semibold mb-4"
+              >
+                Let's Connect
+              </motion.h2>
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.6, ease: "easeOut" }}
+                className="text-gray-300 mb-6"
+              >
                 I'd love to hear from you! Whether you're interested in my artwork, 
                 photography, or just want to say hello, feel free to reach out.
-              </p>
-              <div className="space-y-4">
+              </motion.p>
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
+                className="space-y-4"
+              >
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center">
                     <Mail className="h-5 w-5" />
@@ -82,7 +100,7 @@ export default function ContactPage() {
                       </div>
                       <div className="about">
                         <p>- Egyptian 🇪🇬</p>
-                        <p>- Artist & Photographer </p>
+                        <p>- Artist & Photographer ✨</p>
                         <p>- Beauty is all around, if u just open ur heart to see ♥️</p>
                       </div>
                     </div>
@@ -101,16 +119,15 @@ export default function ContactPage() {
                     <span className="icon-text">Follow on Instagram</span>
                   </Link>
                 </div>
-                {/* Add more contact methods if needed */}
-              </div>
+              </motion.div>
             </div>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3 }}
-            className="bg-gray-800 p-6 rounded-lg"
+            transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
+            className="bg-gray-800 p-6 rounded-lg transform-gpu hover:scale-[0.99] transition-all duration-300"
           >
             <form className={`${inter.className} space-y-4`} onSubmit={handleSubmit}>
               <div>
