@@ -564,3 +564,69 @@ body {
   opacity: 0.8;
   transition: opacity 0.3s ease;
 }
+
+/* Update the info page profile card styles */
+.card-container {
+  @apply relative rounded-2xl overflow-hidden;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 15px 20px rgba(0, 0, 0, 0.2),
+    inset 0 2px 4px rgba(255, 255, 255, 0.05);
+}
+
+.image-container {
+  @apply relative w-full h-full;
+  background: rgba(17, 17, 17, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+.image-container img {
+  @apply transition-all duration-700;
+}
+
+.image-container:hover img {
+  transform: scale(1.05);
+}
+
+/* Remove the rotating gradient and replace with subtle glow effect */
+.card-container::before {
+  content: '';
+  @apply absolute inset-0 opacity-0 transition-opacity duration-700;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(139, 92, 246, 0.15),
+    rgba(236, 72, 153, 0.15),
+    transparent 70%
+  );
+}
+
+.card-container:hover::before {
+  opacity: 1;
+}
+
+/* Update gallery card styles to support hover description */
+.gallery-card-wrapper {
+  @apply relative rounded-xl overflow-hidden w-full;
+  background-image: linear-gradient(163deg, #60a5fa 0%, #8b5cf6 50%, #ec4899 100%);
+  transition: all 0.3s ease;
+}
+
+.gallery-card-inner {
+  @apply relative w-full h-full bg-gray-900 rounded-xl overflow-hidden;
+  transition: all 0.2s ease;
+}
+
+.gallery-card-inner:hover {
+  transform: scale(0.98);
+}
+
+.gallery-card-wrapper:hover {
+  box-shadow: 0px 0px 30px 1px rgba(139, 92, 246, 0.3);
+}
+
+/* Remove old info page card styles */
+.card-container,
+.rotating-gradient,
+.image-container {
+  display: none;
+}

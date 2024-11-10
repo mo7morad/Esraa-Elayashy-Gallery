@@ -15,8 +15,8 @@ export function AnimatedOpeningText({ title, subtitle, className }: AnimatedOpen
   const [isAnimated, setIsAnimated] = useState(false)
 
   useEffect(() => {
-    const timer1 = setTimeout(() => setIsVisible(true), 500)
-    const timer2 = setTimeout(() => setIsAnimated(true), 1000)
+    const timer1 = setTimeout(() => setIsVisible(true), 800)
+    const timer2 = setTimeout(() => setIsAnimated(true), 1500)
 
     return () => {
       clearTimeout(timer1)
@@ -32,11 +32,11 @@ export function AnimatedOpeningText({ title, subtitle, className }: AnimatedOpen
             className={cn(
               "text-4xl md:text-6xl font-bold bg-clip-text text-transparent",
               "bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500",
-              "transform transition-all duration-1000 ease-out",
+              "transform transition-all duration-1500 ease-out",
               isVisible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0",
               isAnimated && "animate-gradient-x"
             )}
-            style={{ backgroundSize: "200% 200%", animationDuration: "10s" }}
+            style={{ backgroundSize: "200% 200%", animationDuration: "15s" }}
           >
             {title.split("").map((char, index) => (
               <motion.span
@@ -47,8 +47,8 @@ export function AnimatedOpeningText({ title, subtitle, className }: AnimatedOpen
                   y: 0,
                   opacity: 1,
                   transition: {
-                    delay: index * 0.05,
-                    duration: 0.8,
+                    delay: index * 0.08,
+                    duration: 1.2,
                     ease: [0.33, 1, 0.68, 1]
                   }
                 } : {}}
@@ -65,10 +65,10 @@ export function AnimatedOpeningText({ title, subtitle, className }: AnimatedOpen
             <motion.p
               className={cn(
                 "text-lg md:text-xl text-gray-300",
-                "transform transition-all duration-1000 ease-out",
+                "transform transition-all duration-1500 ease-out",
                 isVisible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
               )}
-              style={{ transitionDelay: "500ms" }}
+              style={{ transitionDelay: "800ms" }}
             >
               {subtitle}
             </motion.p>

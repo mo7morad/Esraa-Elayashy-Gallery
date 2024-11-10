@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useMemo, useCallback, useEffect } from 'react'
+import { useState, useMemo, useCallback, useEffect } from 'react'
 import Image from 'next/image'
 import { Dialog, DialogContent } from "@/components/ui/dialog"
 import { cn } from "@/lib/utils"
@@ -344,26 +344,31 @@ const sortedImages = [...images].sort((a, b) => new Date(b.date).getTime() - new
 // Get unique categories once
 const uniqueCategories = ['all', ...Array.from(new Set(sortedImages.map(img => img.category.toLowerCase())))]
 
-// Update the GalleryItem component
+// Update the GalleryItem component to show description on hover
 function GalleryItem({ image, index }: { image: ImageType; index: number }) {
-  const ref = useRef(null)
-  
   return (
     <motion.div 
-      ref={ref}
       className="gallery-card-wrapper aspect-square"
       whileHover={{ scale: 1.02 }}
       transition={{ duration: 0.2 }}
     >
-      <div className="gallery-card-inner h-full">
+      <div className="gallery-card-inner h-full group">
         <Image
           src={image.src}
           alt={image.alt}
           width={500}
           height={500}
           className="w-full h-full object-cover"
-          priority={index < 4} // Prioritize loading first 4 images
+          priority={index < 4}
         />
+        <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+          <p className={cn(
+            "text-white text-center text-sm",
+            image.isArabic && "text-right direction-rtl"
+          )}>
+            {image.description}
+          </p>
+        </div>
       </div>
     </motion.div>
   )
