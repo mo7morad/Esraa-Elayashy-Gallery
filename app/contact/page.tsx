@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { playfair, inter } from '@/lib/fonts'
 import { useState } from 'react'
-import { Send, CheckCircle, Mail } from 'lucide-react'
+import { Send, CheckCircle, Mail, Instagram } from 'lucide-react'
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -59,6 +59,17 @@ export default function ContactPage() {
                   <div>
                     <p className="font-medium">Email</p>
                     <p className="text-gray-300">esraaelayashy@gmail.com</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center">
+                    <Instagram className="h-5 w-5 text-pink-500" />
+                  </div>
+                  <div>
+                    <p className="font-medium">Instagram</p>
+                    <Link href="https://www.instagram.com/esraa_elayashy/" target="_blank" className="text-gray-300 underline hover:text-pink-400 transition-colors">
+                      @esraa_elayashy
+                    </Link>
                   </div>
                 </div>
                 {/* Add more contact methods if needed */}
