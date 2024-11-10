@@ -8,6 +8,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { playfair, inter } from '@/lib/fonts'
 import { useState } from 'react'
 import { Send, CheckCircle, Mail, Instagram } from 'lucide-react'
+import Image from 'next/image'
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -61,16 +62,44 @@ export default function ContactPage() {
                     <p className="text-gray-300">esraaelayashy@gmail.com</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center">
-                    <Instagram className="h-5 w-5 text-pink-500" />
+                <div className="tooltip-container group relative">
+                  <div className="tooltip-content">
+                    <div className="profile-card">
+                      <div className="user-info">
+                        <div className="avatar-wrapper">
+                          <Image 
+                            src="/images/main.jpg" 
+                            alt="Esraa ElAyashy"
+                            width={50}
+                            height={50}
+                            className="rounded-xl object-cover"
+                          />
+                        </div>
+                        <div className="details">
+                          <div className="name">Esraa ElAyashy</div>
+                          <div className="username">@esraa_elayashy</div>
+                        </div>
+                      </div>
+                      <div className="about">
+                        <p>Egyptian 🇪🇬</p>
+                        <p>Artist & Photographer 🎨📸</p>
+                        <p>Beauty is all around, if u just open ur heart to see ♥️</p>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-medium">Instagram</p>
-                    <Link href="https://www.instagram.com/esraa_elayashy/" target="_blank" className="text-gray-300 underline hover:text-pink-400 transition-colors">
-                      @esraa_elayashy
-                    </Link>
-                  </div>
+                  <Link 
+                    href="https://www.instagram.com/esraa_elayashy/" 
+                    target="_blank"
+                    className="instagram-link"
+                  >
+                    <div className="icon-layers">
+                      {[...Array(5)].map((_, i) => (
+                        <span key={i} className="icon-layer" />
+                      ))}
+                      <Instagram className="h-5 w-5 relative z-10" />
+                    </div>
+                    <span className="icon-text">Follow on Instagram</span>
+                  </Link>
                 </div>
                 {/* Add more contact methods if needed */}
               </div>

@@ -514,14 +514,41 @@ export function ModernDarkArtGalleryComponent() {
               transition={{ delay: 0.3 }}
               className="relative z-10"
             >
-              <h1 className={`${playfair.className} text-4xl sm:text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 animate-gradient-x h-[52px] md:h-[62px] lg:h-[72px] flex items-center justify-center`}>
-                Esraa ElAyashy
-              </h1>
+              <motion.h1 
+                className={`${playfair.className} text-4xl sm:text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 animate-gradient-x h-[52px] md:h-[62px] lg:h-[72px] flex items-center justify-center`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ 
+                  duration: 1.2,
+                  delay: 0.5,
+                  ease: [0.25, 0.1, 0.25, 1]
+                }}
+              >
+                {["E", "s", "r", "a", "a", " ", "E", "l", "A", "y", "a", "s", "h", "y"].map((letter, index) => (
+                  <motion.span
+                    key={index}
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 1,
+                      delay: 0.8 + index * 0.1,
+                      ease: [0.25, 0.1, 0.25, 1]
+                    }}
+                    className="inline-block"
+                  >
+                    {letter === " " ? "\u00A0" : letter}
+                  </motion.span>
+                ))}
+              </motion.h1>
               <motion.p 
                 className={`${playfair.className} mt-4 text-xl sm:text-2xl bg-clip-text text-transparent bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 animate-gradient-x`}
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
+                transition={{ 
+                  duration: 1,
+                  delay: 2.2,
+                  ease: [0.25, 0.1, 0.25, 1]
+                }}
               >
                 Artist & Photographer
               </motion.p>

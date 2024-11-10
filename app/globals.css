@@ -136,7 +136,7 @@ body {
 }
 
 .animate-gradient-x {
-  animation: gradient-x 15s ease infinite;
+  animation: gradient-x 10s ease infinite;
   background-size: 200% 200%;
 }
 
@@ -267,10 +267,98 @@ body {
 }
 
 .animate-gradient-x {
-  animation: gradient-x 15s ease infinite;
+  animation: gradient-x 10s ease infinite;
   background-size: 200% 200%;
 }
 
 .direction-rtl {
   direction: rtl;
+}
+
+/* Add Instagram tooltip styles */
+.tooltip-container {
+  @apply relative cursor-pointer transition-all duration-200 text-base rounded-lg;
+}
+
+.tooltip-content {
+  @apply absolute -top-40 left-1/2 -translate-x-1/2 p-3 opacity-0 pointer-events-none
+         transition-all duration-500 rounded-2xl bg-gray-800/95 backdrop-blur-sm
+         border border-gray-700/50 invisible
+         shadow-[inset_5px_5px_5px_rgba(0,0,0,0.2),inset_-5px_-5px_15px_rgba(255,255,255,0.1),5px_5px_15px_rgba(0,0,0,0.3)];
+}
+
+.tooltip-container:hover .tooltip-content {
+  @apply opacity-100 visible -translate-y-2;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.profile-card {
+  @apply min-w-[240px] p-3 rounded-xl border border-pink-500/20;
+}
+
+.user-info {
+  @apply flex gap-3 items-center mb-2;
+}
+
+.avatar {
+  @apply w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-purple-500
+         flex items-center justify-center font-semibold text-white;
+}
+
+.instagram-link {
+  @apply flex items-center gap-2 p-2 text-pink-500 transition-all duration-300;
+}
+
+.icon-layers {
+  @apply relative w-10 h-10 flex items-center justify-center transition-transform duration-300;
+}
+
+.tooltip-container:hover .icon-layers {
+  transform: rotate(-35deg) skew(20deg);
+}
+
+.icon-layer {
+  @apply absolute inset-0 border border-pink-500 rounded-md transition-all duration-300;
+}
+
+.tooltip-container:hover .icon-layer:nth-child(1) { @apply opacity-20 translate-x-[2px] -translate-y-[2px]; }
+.tooltip-container:hover .icon-layer:nth-child(2) { @apply opacity-40 translate-x-[4px] -translate-y-[4px]; }
+.tooltip-container:hover .icon-layer:nth-child(3) { @apply opacity-60 translate-x-[6px] -translate-y-[6px]; }
+.tooltip-container:hover .icon-layer:nth-child(4) { @apply opacity-80 translate-x-[8px] -translate-y-[8px]; }
+.tooltip-container:hover .icon-layer:nth-child(5) { @apply opacity-100 translate-x-[10px] -translate-y-[10px]; }
+
+.icon-text {
+  @apply absolute left-1/2 -translate-x-1/2 -bottom-1 opacity-0 font-medium
+         transition-all duration-300 whitespace-nowrap;
+}
+
+.tooltip-container:hover .icon-text {
+  @apply -bottom-8 opacity-100;
+}
+
+/* Update the avatar styles */
+.avatar-wrapper {
+  @apply w-12 h-12 rounded-xl overflow-hidden border-2 border-pink-500/20
+         flex items-center justify-center relative;
+}
+
+.avatar-wrapper img {
+  @apply w-full h-full object-cover transition-transform duration-300;
+}
+
+.tooltip-container:hover .avatar-wrapper img {
+  @apply scale-110;
+}
+
+/* Update tooltip animation */
+.tooltip-content {
+  @apply absolute -top-40 left-1/2 -translate-x-1/2 p-3 opacity-0 pointer-events-none
+         transition-all duration-500 rounded-2xl bg-gray-800/95 backdrop-blur-sm
+         border border-gray-700/50 invisible
+         shadow-[inset_5px_5px_5px_rgba(0,0,0,0.2),inset_-5px_-5px_15px_rgba(255,255,255,0.1),5px_5px_15px_rgba(0,0,0,0.3)];
+}
+
+.tooltip-container:hover .tooltip-content {
+  @apply opacity-100 visible -translate-y-2;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
