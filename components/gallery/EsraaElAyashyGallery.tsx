@@ -566,15 +566,15 @@ export function ModernDarkArtGalleryComponent() {
           transition={{ delay: 0.4 }}
         >
           <div className="flex flex-col gap-4">
-            <div className="flex flex-wrap items-center justify-center gap-2 px-4 sm:px-0">
+            <div className="flex items-center justify-center space-x-2 rtl space-x-reverse px-4">
               <span className="inline-block">🤍</span>
               <span className="inline-block">🌷</span>
-              <p className={`${ibmPlexArabic.className} text-lg sm:text-xl text-gray-300 rtl flex-1 min-w-[200px] text-center sm:text-right`}>
+              <p className={`${ibmPlexArabic.className} text-lg sm:text-xl text-gray-300 text-center`}>
                 وَكانت غامضة، شفّافَة، نقيَّة كَـ زهرة التُّوليب التي تحبها
               </p>
             </div>
             
-            <div className="flex flex-wrap items-center justify-center gap-2">
+            <div className="flex items-center justify-center space-x-2">
               <span className="inline-block">🌷</span>
               <p className={`${playfair.className} text-lg sm:text-xl italic text-gray-300`}>
                 Like Tulips or more tender
