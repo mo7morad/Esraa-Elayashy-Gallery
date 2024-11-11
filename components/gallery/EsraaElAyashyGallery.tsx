@@ -25,7 +25,7 @@ type ImageType = {
 // Move images array outside component to prevent recreation on each render
 const images: ImageType[] = [
   {
-    src: "./images/1@January-28-2015.JPG",
+    src: "./images/1@January_28_2015.JPG",
     alt: "Sunset view over the Nile River",
     date: "January 28, 2015",
     description: "Taken by Me 🙈❤",
