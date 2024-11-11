@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -629,4 +631,29 @@ body {
 .rotating-gradient,
 .image-container {
   display: none;
+}
+
+/* Add these new styles */
+.font-arabic {
+  font-family: 'Noto Naskh Arabic', serif;
+  direction: rtl;
+}
+
+/* Update the existing tooltip styles */
+.tooltip-content p[dir="rtl"],
+.tooltip-content .rtl-text {
+  font-family: 'Noto Naskh Arabic', serif;
+  direction: rtl;
+  text-align: right;
+}
+
+/* Add smooth loading animation */
+.image-loading {
+  animation: imageLoadingPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes imageLoadingPulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.5; }
 }

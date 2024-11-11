@@ -5,8 +5,11 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ElAyashy Gallery",
-  description: "Showcasing the art and photography of Esraa Elayashy",
+  title: "Esraa ElAyashy",
+  description: "Artist & Photographer Portfolio",
+  icons: {
+    icon: '/esraa-favicon.svg',
+  },
 };
 
 export default function RootLayout({

@@ -11,6 +11,7 @@ import Link from 'next/link'
 import { inter, playfair, ibmPlexArabic } from '@/lib/fonts'
 import { ScrollToTop } from '@/components/ui/ScrollToTop'
 import { ElAyashyLoader } from '@/components/ui/ElAyashyLoader'
+import { useInView } from 'react-intersection-observer'
 
 // Define type for image object
 type ImageType = {
@@ -49,7 +50,7 @@ const images: ImageType[] = [
     src: "./images/4@February_6_2018.jpg",
     alt: "Blue butterfly artwork",
     date: "February 6, 2018",
-    description: "فراشتي 🙈💙",
+    description: "فراشتي الجميلة 🦋💙",
     category: "Art",
     isArabic: true
   },
@@ -295,7 +296,7 @@ const images: ImageType[] = [
     src: "./images/2_facebook@29_March_2018.jpg",
     alt: "Placeholder",
     date: "March 29, 2018",
-    description: "🌌 وارزقنا راحة البال وحياة مليئة بكل ما يرضيك",
+    description: "وارزقنا راحة البال وحياة مليئة بكل ما يرضيك 🌌",
     category: "Category Placeholder",
     isArabic: true
   },
@@ -318,7 +319,7 @@ const images: ImageType[] = [
     src: "./images/5_facebook@31_January_2019.jpg",
     alt: "Placeholder",
     date: "January 31, 2018",
-    description: "ببطء.. لكن بثبات وبنفس الطريقة التي يحول بها الخريف شكل الغابة، حولتني آلاف التغييرات الصغيرة إلى شخص آخر",
+    description: "ببطء.. لكن بثبات وبنفس الطريقة التي يحول بها الخريف شكل الغابة، حولتني آلاف التغييرات الصغيرة إلى شخص آخر 🍂",
     category: "Category Placeholder",
     isArabic: true
   },
@@ -344,27 +345,40 @@ const sortedImages = [...images].sort((a, b) => new Date(b.date).getTime() - new
 // Get unique categories once
 const uniqueCategories = ['all', ...Array.from(new Set(sortedImages.map(img => img.category.toLowerCase())))]
 
-// Update the GalleryItem component to show description on hover
+// Update the GalleryItem component
 function GalleryItem({ image, index }: { image: ImageType; index: number }) {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+    rootMargin: '50px'
+  })
+
   return (
     <motion.div 
+      ref={ref}
       className="gallery-card-wrapper aspect-square"
+      initial={{ opacity: 0, y: 20 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+      transition={{ duration: 0.5, delay: Math.min(index * 0.1, 1) }}
       whileHover={{ scale: 1.02 }}
-      transition={{ duration: 0.2 }}
     >
       <div className="gallery-card-inner h-full group">
-        <Image
-          src={image.src}
-          alt={image.alt}
-          width={500}
-          height={500}
-          className="w-full h-full object-cover"
-          priority={index < 4}
-        />
+        {inView && (
+          <Image
+            src={image.src}
+            alt={image.alt}
+            width={500}
+            height={500}
+            className="w-full h-full object-cover"
+            loading={index < 4 ? "eager" : "lazy"}
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSAyVC08MTY3LjIyOUFTRjo/Tj4yMklaTj5FUVFhYnJydnJPVGdwaWf/2wBDARUXFx4aHR4eHWhnOjE6YWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWH/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+          />
+        )}
         <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
           <p className={cn(
             "text-white text-center text-sm",
-            image.isArabic && "text-right direction-rtl"
+            image.isArabic && "text-right font-arabic"
           )}>
             {image.description}
           </p>
@@ -397,6 +411,7 @@ export function ModernDarkArtGalleryComponent() {
   const [filter, setFilter] = useState('all')
   const [isLoading, setIsLoading] = useState(true)
   const [direction, setDirection] = useState(0);
+  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set())
 
   // Memoize filtered images to prevent unnecessary recalculation
   const filteredImages = useMemo(() => {
@@ -443,6 +458,10 @@ export function ModernDarkArtGalleryComponent() {
       setIsLoading(true)
     }
   }, [selectedImage])
+
+  const handleImageLoad = (src: string) => {
+    setLoadedImages(prev => new Set(prev).add(src))
+  }
 
   return (
     <div className="min-h-screen bg-gray-900 text-white overflow-hidden">
@@ -548,7 +567,7 @@ export function ModernDarkArtGalleryComponent() {
         >
           <div className="flex flex-col gap-4">
             <motion.p 
-              className={`${ibmPlexArabic.className} text-lg sm:text-xl text-gray-300`}
+              className={`${ibmPlexArabic.className} text-lg sm:text-xl text-gray-300 text-right`}
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ 
@@ -557,7 +576,7 @@ export function ModernDarkArtGalleryComponent() {
                 ease: "easeOut"
               }}
             >
-              🤍🌷 وَكانت غامضة، شفّافَة، نقيَّة كَـ زهرة التُّوليب التي تحبها
+              وَكانت غامضة، شفّافَة، نقيَّة كَـ زهرة التُّوليب التي تحبها 🤍🌷
             </motion.p>
             <div className="flex items-center justify-center gap-3">
               <motion.span
@@ -599,7 +618,7 @@ export function ModernDarkArtGalleryComponent() {
                   delay: 1.5
                 }}
               >
-                
+                🌷
               </motion.span>
             </div>
           </div>
@@ -684,13 +703,17 @@ export function ModernDarkArtGalleryComponent() {
                         <Image
                           src={filteredImages[selectedImage].src}
                           alt={filteredImages[selectedImage].alt}
-                          layout="fill"
-                          objectFit="contain"
-                          className="select-none"
+                          fill
+                          style={{ objectFit: "contain" }}
                           sizes="95vw"
                           quality={100}
                           priority
                           onLoadingComplete={() => setIsLoading(false)}
+                          className={cn(
+                            "select-none w-full h-full transition-opacity duration-300",
+                            loadedImages.has(filteredImages[selectedImage].src) ? "opacity-100" : "opacity-0"
+                          )}
+                          onLoad={() => handleImageLoad(filteredImages[selectedImage].src)}
                         />
                       </motion.div>
                     </AnimatePresence>
