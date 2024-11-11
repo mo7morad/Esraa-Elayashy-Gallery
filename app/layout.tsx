@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "ElAyashy Gallery",
-  description: "A collection of artwork and photography by Esraa ElAyashy",
+  description: "Showcasing the art and photography of Esraa Elayashy",
 };
 
 export default function RootLayout({
