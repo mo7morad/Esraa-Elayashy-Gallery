@@ -32,7 +32,7 @@ const images: ImageType[] = [
     category: "Landscape"
   },
   {
-    src: "/images/2@November_21_2016.jpg",
+    src: "./images/2@November_21_2016.jpg",
     alt: "Seashells with decorative sandal",
     date: "November 21, 2016",
     description: "Beach 🌞🌊🐚",
