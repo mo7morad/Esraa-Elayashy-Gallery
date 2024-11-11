@@ -567,7 +567,7 @@ export function ModernDarkArtGalleryComponent() {
         >
           <div className="flex flex-col gap-4">
             <motion.p 
-              className={`${ibmPlexArabic.className} text-lg sm:text-xl text-gray-300 text-right`}
+              className={`${ibmPlexArabic.className} text-lg sm:text-xl text-gray-300`}
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ 
@@ -576,7 +576,7 @@ export function ModernDarkArtGalleryComponent() {
                 ease: "easeOut"
               }}
             >
-              وَكانت غامضة، شفّافَة، نقيَّة كَـ زهرة التُّوليب التي تحبها 🤍🌷
+              🤍🌷 وَكانت غامضة، شفّافَة، نقيَّة كَـ زهرة التُّوليب التي تحبها
             </motion.p>
             <div className="flex items-center justify-center gap-3">
               <motion.span
