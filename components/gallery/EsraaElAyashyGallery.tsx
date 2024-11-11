@@ -501,7 +501,7 @@ export function ModernDarkArtGalleryComponent() {
         >
           <div className="absolute inset-0 bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-blue-500/20 blur-3xl" />
           <motion.div 
-            className="relative backdrop-blur-lg rounded-2xl p-8 text-center border-2 border-transparent bg-gray-900/50"
+            className="relative backdrop-blur-lg rounded-2xl p-8 text-center border-2 border-[#7915ce] bg-gray-900/50"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -566,8 +566,8 @@ export function ModernDarkArtGalleryComponent() {
           transition={{ delay: 0.4 }}
         >
           <div className="flex flex-col gap-4">
-            <motion.p 
-              className={`${ibmPlexArabic.className} text-lg sm:text-xl text-gray-300`}
+            <motion.div 
+              className="flex items-center justify-center gap-2"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ 
@@ -576,8 +576,42 @@ export function ModernDarkArtGalleryComponent() {
                 ease: "easeOut"
               }}
             >
-              🤍🌷 وَكانت غامضة، شفّافَة، نقيَّة كَـ زهرة التُّوليب التي تحبها
-            </motion.p>
+              <motion.span
+                animate={{ 
+                  y: [0, -5, 0],
+                  rotate: [0, 5, 0],
+                  scale: [1, 1.1, 1]
+                }}
+                transition={{ 
+                  repeat: Infinity,
+                  duration: 3,
+                  ease: "easeInOut"
+                }}
+                className="inline-block"
+              >
+                🤍
+              </motion.span>
+              <motion.span
+                animate={{ 
+                  y: [0, -5, 0],
+                  rotate: [0, 5, 0],
+                  scale: [1, 1.1, 1]
+                }}
+                transition={{ 
+                  repeat: Infinity,
+                  duration: 3,
+                  ease: "easeInOut",
+                  delay: 0.5
+                }}
+                className="inline-block"
+              >
+                🌷
+              </motion.span>
+              <p className={`${ibmPlexArabic.className} text-lg sm:text-xl text-gray-300 rtl`}>
+                وَكانت غامضة، شفّافَة، نقيَّة كَـ زهرة التُّوليب التي تحبها
+              </p>
+            </motion.div>
+            
             <div className="flex items-center justify-center gap-3">
               <motion.span
                 animate={{ 
@@ -590,6 +624,7 @@ export function ModernDarkArtGalleryComponent() {
                   duration: 3,
                   ease: "easeInOut"
                 }}
+                className="inline-block"
               >
                 🌷
               </motion.span>
@@ -617,6 +652,7 @@ export function ModernDarkArtGalleryComponent() {
                   ease: "easeInOut",
                   delay: 1.5
                 }}
+                className="inline-block"
               >
                 🌷
               </motion.span>

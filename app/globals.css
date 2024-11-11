@@ -657,3 +657,14 @@ body {
   50% { opacity: 0.8; }
   100% { opacity: 0.5; }
 }
+
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  .flex-col-reverse-mobile {
+    flex-direction: column-reverse;
+  }
+}
