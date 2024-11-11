@@ -569,7 +569,7 @@ export function ModernDarkArtGalleryComponent() {
             <div className="flex items-center justify-center space-x-2 rtl space-x-reverse px-4">
               <p className={`${ibmPlexArabic.className} text-lg sm:text-xl text-gray-300 text-center`}>
                 وَكانت غامضة، شفّافَة، نقيَّة كَـ زهرة التُّوليب التي تحبها
-              <span className="inline-block">🤍</span>
+              <span className="inline-block">🤍 </span>
               <span className="inline-block">🌷</span>
               </p>
             </div>
