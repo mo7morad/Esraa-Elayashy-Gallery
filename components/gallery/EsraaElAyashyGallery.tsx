@@ -567,19 +567,48 @@ export function ModernDarkArtGalleryComponent() {
         >
           <div className="flex flex-col gap-4">
             <div className="flex items-center justify-center space-x-2 rtl space-x-reverse px-4">
-              <span className="inline-block">🤍</span>
-              <span className="inline-block">🌷</span>
               <p className={`${ibmPlexArabic.className} text-lg sm:text-xl text-gray-300 text-center`}>
                 وَكانت غامضة، شفّافَة، نقيَّة كَـ زهرة التُّوليب التي تحبها
+              <span className="inline-block">🤍</span>
+              <span className="inline-block">🌷</span>
               </p>
             </div>
             
             <div className="flex items-center justify-center space-x-2">
-              <span className="inline-block">🌷</span>
+              <motion.span
+                animate={{ 
+                  y: [0, -5, 0],
+                  rotate: [0, 5, 0],
+                  scale: [1, 1.1, 1]
+                }}
+                transition={{ 
+                  repeat: Infinity,
+                  duration: 3,
+                  ease: "easeInOut"
+                }}
+                className="inline-block"
+              >
+                🌷
+              </motion.span>
               <p className={`${playfair.className} text-lg sm:text-xl italic text-gray-300`}>
                 Like Tulips or more tender
               </p>
-              <span className="inline-block">🌷</span>
+              <motion.span
+                animate={{ 
+                  y: [0, -5, 0],
+                  rotate: [0, -5, 0],
+                  scale: [1, 1.1, 1]
+                }}
+                transition={{ 
+                  repeat: Infinity,
+                  duration: 3,
+                  ease: "easeInOut",
+                  delay: 1.5
+                }}
+                className="inline-block"
+              >
+                🌷
+              </motion.span>
             </div>
           </div>
         </motion.div>
