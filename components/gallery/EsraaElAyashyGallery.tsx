@@ -25,21 +25,21 @@ type ImageType = {
 // Move images array outside component to prevent recreation on each render
 const images: ImageType[] = [
   {
-    src: "../images/1@January_28_2015.JPG",
+    src: "./images/1@January_28_2015.JPG",
     alt: "Sunset view over the Nile River",
     date: "January 28, 2015",
     description: "Taken by Me 🙈❤",
     category: "Landscape"
   },
   {
-    src: "../images/2@November_21_2016.jpg",
+    src: "./images/2@November_21_2016.jpg",
     alt: "Seashells with decorative sandal",
     date: "November 21, 2016",
     description: "Beach 🌞🌊🐚",
     category: "Still Life"
   },
   {
-    src: "../images/3@December_2_2017.jpg",
+    src: "./images/3@December_2_2017.jpg",
     alt: "Pink flower held in hand",
     date: "December 2, 2017",
     description: "💜 `` 🌸 ,, 💙",
@@ -117,7 +117,7 @@ const images: ImageType[] = [
     category: "Travel"
   },
   {
-    src: "../images/14@April_5_2021.jpg",
+    src: "./images/14@April_5_2021.jpg",
     alt: "Pyramids with tourists",
     date: "April 5, 2021",
     description: "One of the seven ancient wonders of the world, the great pyramids of Giza are marvelous feats of architecture 🤩 Here is Egypt 🇪🇬, the mother of the world and the country of civilization Proud to be Egyptian ♥️",
