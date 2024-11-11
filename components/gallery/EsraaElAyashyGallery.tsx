@@ -566,96 +566,20 @@ export function ModernDarkArtGalleryComponent() {
           transition={{ delay: 0.4 }}
         >
           <div className="flex flex-col gap-4">
-            <motion.div 
-              className="flex items-center justify-center gap-2"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ 
-                duration: 0.8,
-                delay: 0.5,
-                ease: "easeOut"
-              }}
-            >
-              <motion.span
-                animate={{ 
-                  y: [0, -5, 0],
-                  rotate: [0, 5, 0],
-                  scale: [1, 1.1, 1]
-                }}
-                transition={{ 
-                  repeat: Infinity,
-                  duration: 3,
-                  ease: "easeInOut"
-                }}
-                className="inline-block"
-              >
-                🤍
-              </motion.span>
-              <motion.span
-                animate={{ 
-                  y: [0, -5, 0],
-                  rotate: [0, 5, 0],
-                  scale: [1, 1.1, 1]
-                }}
-                transition={{ 
-                  repeat: Infinity,
-                  duration: 3,
-                  ease: "easeInOut",
-                  delay: 0.5
-                }}
-                className="inline-block"
-              >
-                🌷
-              </motion.span>
-              <p className={`${ibmPlexArabic.className} text-lg sm:text-xl text-gray-300 rtl`}>
+            <div className="flex flex-wrap items-center justify-center gap-2 px-4 sm:px-0">
+              <span className="inline-block">🤍</span>
+              <span className="inline-block">🌷</span>
+              <p className={`${ibmPlexArabic.className} text-lg sm:text-xl text-gray-300 rtl flex-1 min-w-[200px] text-center sm:text-right`}>
                 وَكانت غامضة، شفّافَة، نقيَّة كَـ زهرة التُّوليب التي تحبها
               </p>
-            </motion.div>
+            </div>
             
-            <div className="flex items-center justify-center gap-3">
-              <motion.span
-                animate={{ 
-                  y: [0, -5, 0],
-                  rotate: [0, 5, 0],
-                  scale: [1, 1.1, 1]
-                }}
-                transition={{ 
-                  repeat: Infinity,
-                  duration: 3,
-                  ease: "easeInOut"
-                }}
-                className="inline-block"
-              >
-                🌷
-              </motion.span>
-              <motion.p 
-                className={`${playfair.className} text-lg sm:text-xl italic text-gray-300`}
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ 
-                  duration: 0.8,
-                  delay: 0.7,
-                  ease: "easeOut"
-                }}
-              >
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              <span className="inline-block">🌷</span>
+              <p className={`${playfair.className} text-lg sm:text-xl italic text-gray-300`}>
                 Like Tulips or more tender
-              </motion.p>
-              <motion.span
-                animate={{ 
-                  y: [0, -5, 0],
-                  rotate: [0, -5, 0],
-                  scale: [1, 1.1, 1]
-                }}
-                transition={{ 
-                  repeat: Infinity,
-                  duration: 3,
-                  ease: "easeInOut",
-                  delay: 1.5
-                }}
-                className="inline-block"
-              >
-                🌷
-              </motion.span>
+              </p>
+              <span className="inline-block">🌷</span>
             </div>
           </div>
         </motion.div>
