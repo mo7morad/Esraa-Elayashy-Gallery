@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Esraa ElAyashy",
   description: "Artist & Photographer Portfolio",
   icons: {
-    icon: '/esraa-favicon.svg',
+    icon: './esraa-favicon.svg',
   },
 };
 
