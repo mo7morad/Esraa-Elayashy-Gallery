@@ -50,7 +50,7 @@ const images: ImageType[] = [
     src: "./images/4@February_6_2018.jpg",
     alt: "Blue butterfly artwork",
     date: "February 6, 2018",
-    description: "فراشتي الجميلة 🦋💙",
+    description: "فراشتي 🙈💙",
     category: "Art",
     isArabic: true
   },
@@ -289,7 +289,7 @@ const images: ImageType[] = [
     src: "./images/1_facebook@3_March_2018.jpg",
     alt: "Placeholder",
     date: "March 3, 2018",
-    description: "Placeholder description for Facebook Image 1",
+    description: "One day we will find what we are looking for,\n or maybe not...\n maybe we'll find something much greater than we want",
     category: "Category Placeholder"
   },
   {
@@ -304,7 +304,7 @@ const images: ImageType[] = [
     src: "./images/3_facebook@14_April_2018.jpg",
     alt: "Placeholder",
     date: "March 29, 2018",
-    description: "Placeholder description for Facebook Image 3",
+    description: "انطق جمالاً أو تجمل بالسكوت",
     category: "Category Placeholder"
   },
   {
@@ -328,13 +328,6 @@ const images: ImageType[] = [
     alt: "Placeholder",
     date: "June 21, 2019",
     description: "Placeholder description for Facebook Image 6",
-    category: "Category Placeholder"
-  },
-  {
-    src: "./images/7_facebook@16_July_2016.jpg",
-    alt: "Placeholder",
-    date: "June 21, 2019",
-    description: "Placeholder description for Facebook Image 7",
     category: "Category Placeholder"
   },
 ]
