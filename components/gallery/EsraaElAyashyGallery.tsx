@@ -26,28 +26,28 @@ type ImageType = {
 // Move images array outside component to prevent recreation on each render
 const images: ImageType[] = [
   {
-    src: "./images/1@January_28_2015.JPG",
+    src: "/images/1@January_28_2015.JPG",
     alt: "Sunset view over the Nile River",
     date: "January 28, 2015",
     description: "Taken by Me 🙈❤",
     category: "Landscape"
   },
   {
-    src: "./images/2@November_21_2016.jpg",
+    src: "/images/2@November_21_2016.jpg",
     alt: "Seashells with decorative sandal",
     date: "November 21, 2016",
     description: "Beach 🌞🌊🐚",
     category: "Still Life"
   },
   {
-    src: "./images/3@December_2_2017.jpg",
+    src: "/images/3@December_2_2017.jpg",
     alt: "Pink flower held in hand",
     date: "December 2, 2017",
     description: "💜 `` 🌸 ,, 💙",
     category: "Nature"
   },
   {
-    src: "./images/4@February_6_2018.jpg",
+    src: "/images/4@February_6_2018.jpg",
     alt: "Blue butterfly artwork",
     date: "February 6, 2018",
     description: "فراشتي 🙈💙",
@@ -55,245 +55,245 @@ const images: ImageType[] = [
     isArabic: true
   },
   {
-    src: "./images/5@March_3_2018.jpg",
+    src: "/images/5@March_3_2018.jpg",
     alt: "Clouds through tree silhouettes",
     date: "March 3, 2018",
     description: "☁💙",
     category: "Nature"
   },
   {
-    src: "./images/6@November_19_2018.jpg",
+    src: "/images/6@November_19_2018.jpg",
     alt: "Sketch of heart and gramophone",
     date: "November 19, 2018",
     description: "Heart beats with the most beautiful tunes when u r surrounded by ur favourite people .. 💜🎶",
     category: "Art"
   },
   {
-    src: "./images/7@April_5_2021.jpg",
+    src: "/images/7@April_5_2021.jpg",
     alt: "Hand with dandelion tattoo and pyramids",
     date: "April 5, 2021",
     description: "One of the seven ancient wonders of the world, the great pyramids of Giza are marvelous feats of architecture 🤩 Here is Egypt 🇪🇬, the mother of the world and the country of civilization Proud to be Egyptian ♥️",
     category: "Travel"
   },
   {
-    src: "./images/8@April_5_2021.jpg",
+    src: "/images/8@April_5_2021.jpg",
     alt: "Pyramids view from golf course",
     date: "April 5, 2021",
     description: "One of the seven ancient wonders of the world, the great pyramids of Giza are marvelous feats of architecture 🤩 Here is Egypt 🇪🇬, the mother of the world and the country of civilization Proud to be Egyptian ♥️",
     category: "Travel"
   },
   {
-    src: "./images/9@April_5_2021.jpg",
+    src: "/images/9@April_5_2021.jpg",
     alt: "Close-up of pyramid stones",
     date: "April 5, 2021",
     description: "One of the seven ancient wonders of the world, the great pyramids of Giza are marvelous feats of architecture 🤩 Here is Egypt 🇪🇬, the mother of the world and the country of civilization Proud to be Egyptian ♥️",
     category: "Travel"
   },
   {
-    src: "./images/10@April_5_2021.jpg",
+    src: "/images/10@April_5_2021.jpg",
     alt: "Pyramid architectural detail",
     date: "April 5, 2021",
     description: "One of the seven ancient wonders of the world, the great pyramids of Giza are marvelous feats of architecture 🤩 Here is Egypt 🇪🇬, the mother of the world and the country of civilization Proud to be Egyptian ♥️",
     category: "Travel"
   },
   {
-    src: "./images/11@April_5_2021.jpg",
+    src: "/images/11@April_5_2021.jpg",
     alt: "Pyramids at sunset",
     date: "April 5, 2021",
     description: "One of the seven ancient wonders of the world, the great pyramids of Giza are marvelous feats of architecture 🤩 Here is Egypt 🇪🇬, the mother of the world and the country of civilization Proud to be Egyptian ♥️",
     category: "Travel"
   },
   {
-    src: "./images/12@April_5_2021.jpg",
+    src: "/images/12@April_5_2021.jpg",
     alt: "Pyramids with stars",
     date: "April 5, 2021",
     description: "One of the seven ancient wonders of the world, the great pyramids of Giza are marvelous feats of architecture 🤩 Here is Egypt 🇪🇬, the mother of the world and the country of civilization Proud to be Egyptian ♥️",
     category: "Travel"
   },
   {
-    src: "./images/13@April_5_2021.jpg",
+    src: "/images/13@April_5_2021.jpg",
     alt: "Pyramids with camels",
     date: "April 5, 2021",
     description: "One of the seven ancient wonders of the world, the great pyramids of Giza are marvelous feats of architecture 🤩 Here is Egypt 🇪🇬, the mother of the world and the country of civilization Proud to be Egyptian ♥️",
     category: "Travel"
   },
   {
-    src: "./images/14@April_5_2021.jpg",
+    src: "/images/14@April_5_2021.jpg",
     alt: "Pyramids with tourists",
     date: "April 5, 2021",
     description: "One of the seven ancient wonders of the world, the great pyramids of Giza are marvelous feats of architecture 🤩 Here is Egypt 🇪🇬, the mother of the world and the country of civilization Proud to be Egyptian ♥️",
     category: "Travel"
   },
   {
-    src: "./images/15@April_7_2021.jpg",
+    src: "/images/15@April_7_2021.jpg",
     alt: "Pyramids with sunset",
     date: "April 7, 2021",
     description: "✨🏙 كلمة حلوة و كلمتين حلوة يا بلدي",
     category: "Travel"
   },
   {
-    src: "./images/16@April_7_2021.jpg",
+    src: "/images/16@April_7_2021.jpg",
     alt: "Pyramids with night sky",
     date: "April 7, 2021",
     description: "✨🏙 كلمة حلوة و كلمتين حلوة يا بلدي",
     category: "Travel"
   },
   {
-    src: "./images/17@May_5_2021.jpg",
+    src: "/images/17@May_5_2021.jpg",
     alt: "Artistic view of pyramids",
     date: "May 5, 2021",
     description: "A picture is a poem without words ... 🌌💙 \n -Horace",
     category: "Art"
   },
   {
-    src: "./images/18@May_5_2021.jpg",
+    src: "/images/18@May_5_2021.jpg",
     alt: "Pyramids with clouds",
     date: "May 5, 2021",
     description: "A picture is a poem without words ... 🌌💙 \n -Horace",
     category: "Art"
   },
   {
-    src: "./images/19@May_5_2021.jpg",
+    src: "/images/19@May_5_2021.jpg",
     alt: "Pyramids with sunset",
     date: "May 5, 2021",
     description: "A picture is a poem without words ... 🌌💙 \n -Horace",
     category: "Art"
   },
   {
-    src: "./images/20@May_5_2021.jpg",
+    src: "/images/20@May_5_2021.jpg",
     alt: "Pyramids with stars",
     date: "May 5, 2021",
     description: "A picture is a poem without words ... 🌌💙 \n -Horace",
     category: "Art"
   },
   {
-    src: "./images/21@May_5_2021.jpg",
+    src: "/images/21@May_5_2021.jpg",
     alt: "Pyramids with tourists",
     date: "May 5, 2021",
     description: "A picture is a poem without words ... 🌌💙 \n -Horace",
     category: "Art"
   },
   {
-    src: "./images/22@May_5_2021.jpg",
+    src: "/images/22@May_5_2021.jpg",
     alt: "Pyramids with camels",
     date: "May 5, 2021",
     description: "A picture is a poem without words ... 🌌💙 \n -Horace",
     category: "Art"
   },
   {
-    src: "./images/23@May_5_2021.jpg",
+    src: "/images/23@May_5_2021.jpg",
     alt: "Pyramids with sunset",
     date: "May 5, 2021",
     description: "A picture is a poem without words ... 🌌💙 \n -Horace",
     category: "Art"
   },
   {
-    src: "./images/24@May_6_2021.jpg",
+    src: "/images/24@May_6_2021.jpg",
     alt: "Starry night",
     date: "May 6, 2021",
     description: "Starry night 🌌 What is done in love is done well ! 💙",
     category: "Nature"
   },
   {
-    src: "./images/25@May_10_2021.jpg",
+    src: "/images/25@May_10_2021.jpg",
     alt: "Sunset view",
     date: "May 10, 2021",
     description: "I like people who get excited about watching a sunset, the sound of the ocean, the smell of rain, and starry nights ✨ \n— Brooke Hampton",
     category: "Nature"
   },
   {
-    src: "./images/26@May_14_2021.png",
+    src: "/images/26@May_14_2021.png",
     alt: "Sketch",
     date: "May 14, 2021",
     description: "One of my favorite sketches ✨",
     category: "Art"
   },
   {
-    src: "./images/27@May_28_2021.jpg",
+    src: "/images/27@May_28_2021.jpg",
     alt: "Flower",
     date: "May 28, 2021",
     description: "Sabır çiçektir, mutlaka açar. 🌺",
     category: "Nature"
   },
   {
-    src: "./images/28@June_25_2021.jpg",
+    src: "/images/28@June_25_2021.jpg",
     alt: "Elegance",
     date: "June 25, 2021",
     description: "Elegance means being beautiful both on the inside and out ✨💜 \n -Coco Chanel",
     category: "Art"
   },
   {
-    src: "./images/29@July_9_2021.jpg",
+    src: "/images/29@July_9_2021.jpg",
     alt: "Life",
     date: "July 9, 2021",
     description: "Ben istiyorum ki yorulmadan, yormadan yasayalim. Icimizde suphe olmadan sevip sevilelim. Beraberken de ozgur olunabilsin. Insanlar birbirlerini taniyabilsin. Kalbinden emin olarak yasamanin guzelligini elimizin tersiyle itmeyelim. 🌷✨",
     category: "Life"
   },
   {
-    src: "./images/30@July_31_2021.jpg",
+    src: "/images/30@July_31_2021.jpg",
     alt: "Beach",
     date: "July 31, 2021",
     description: "To escape and sit quietly on the beach - that's my idea of paradise ✨💙",
     category: "Nature"
   },
   {
-    src: "./images/31@September_11_2021.jpg",
+    src: "/images/31@September_11_2021.jpg",
     alt: "Sunrise",
     date: "September 11, 2021",
     description: "The sky takes on shades of orange during sunrise and sunset, the colour that gives u hope that the sun will set only to rise again 🌅",
     category: "Nature"
   },
   {
-    src: "./images/32@October_21_2021.jpg",
+    src: "/images/32@October_21_2021.jpg",
     alt: "Hope",
     date: "October 21, 2021",
     description: "Umut et, ama beklentin olmasın. O zaman belki hayal kırıklığı yerine bir mucize yaşarsın.✨",
     category: "Hope"
   },
   {
-    src: "./images/33@January_1_2022.jpg",
+    src: "/images/33@January_1_2022.jpg",
     alt: "Limitless",
     date: "January 1, 2022",
     description: "The artist's world is limitless ... ✨",
     category: "Art"
   },
   {
-    src: "./images/34@January_19_2022.jpg",
+    src: "/images/34@January_19_2022.jpg",
     alt: "Museum",
     date: "January 19, 2022",
     description: "A visit to a museum is a search for beauty, truth, and meaning in our lives. Go to museums as often as u can ✨ \n— Maira Kalman",
     category: "Art"
   },
   {
-    src: "./images/35@May_13_2022.jpg",
+    src: "/images/35@May_13_2022.jpg",
     alt: "Thalassophile",
     date: "May 13, 2022",
     description: "Thalassophile 🌊🤍",
     category: "Nature"
   },
   {
-    src: "./images/36@August_7_2022.jpg",
+    src: "/images/36@August_7_2022.jpg",
     alt: "Silent hour",
     date: "August 7, 2022",
     description: "I love the silent hour of night, For blissful dreams may then arise, Revealing to my charmed sight What may not bless my waking eyes. 🌌✨ \n— Anne Brontë",
     category: "Nature"
   },
   {
-    src: "./images/36_2@August_7_2022.jpg",
+    src: "/images/36_2@August_7_2022.jpg",
     alt: "Silent hour",
     date: "August 7, 2022",
     description: "I love the silent hour of night, For blissful dreams may then arise, Revealing to my charmed sight What may not bless my waking eyes. 🌌✨ \n— Anne Brontë",
     category: "Nature"
   },
   {
-    src: "./images/1_facebook@3_March_2018.jpg",
+    src: "/images/1_facebook@3_March_2018.jpg",
     alt: "Placeholder",
     date: "March 3, 2018",
-    description: "One day we will find what we are looking for,\n or maybe not...\n maybe we'll find something much greater than we want",
+    description: "",
     category: "Category Placeholder"
   },
   {
-    src: "./images/2_facebook@29_March_2018.jpg",
+    src: "/images/2_facebook@29_March_2018.jpg",
     alt: "Placeholder",
     date: "March 29, 2018",
     description: "وارزقنا راحة البال وحياة مليئة بكل ما يرضيك 🌌",
@@ -301,14 +301,14 @@ const images: ImageType[] = [
     isArabic: true
   },
   {
-    src: "./images/3_facebook@14_April_2018.jpg",
+    src: "/images/3_facebook@14_April_2018.jpg",
     alt: "Placeholder",
     date: "March 29, 2018",
-    description: "انطق جمالاً أو تجمل بالسكوت",
+    description: "✨ انطق جمالاً أو تجمل بالسكوت",
     category: "Category Placeholder"
   },
   {
-    src: "./images/4_facebook@29_June_2018.jpg",
+    src: "/images/4_facebook@29_June_2018.jpg",
     alt: "Placeholder",
     date: "June 29, 2018",
     description: "حين تعثر على الجمال في قلبك ستعثر عليه في كل قلب 💜",
@@ -316,18 +316,18 @@ const images: ImageType[] = [
     isArabic: true
   },
   {
-    src: "./images/5_facebook@31_January_2019.jpg",
+    src: "/images/5_facebook@31_January_2019.jpg",
     alt: "Placeholder",
     date: "January 31, 2018",
-    description: "ببطء.. لكن بثبات وبنفس الطريقة التي يحول بها الخريف شكل الغابة، حولتني آلاف التغييرات الصغيرة إلى شخص آخر 🍂",
+    description: "ببطء.. لكن بثبات وبنفس الطريقة التي يحول بها الخريف شكل الغابة، حولتني آلاف التغييرات الصغيرة إلى شخص آخر  🍂",
     category: "Category Placeholder",
     isArabic: true
   },
   {
-    src: "./images/6_facebook@21_June_2019.jpg",
+    src: "/images/6_facebook@21_June_2019.jpg",
     alt: "Placeholder",
     date: "June 21, 2019",
-    description: "Placeholder description for Facebook Image 6",
+    description: "Bound by heart, held by hands, and nurtured like a rose. 🌺🫀",
     category: "Category Placeholder"
   },
 ]
@@ -373,7 +373,12 @@ function GalleryItem({ image, index }: { image: ImageType; index: number }) {
             "text-white text-center text-sm",
             image.isArabic && "text-right font-arabic"
           )}>
-            {image.description}
+            {image.description.split('\n').map((line, index) => (
+              <span key={index}>
+                {line}
+                <br />
+              </span>
+            ))}
           </p>
         </div>
       </div>
