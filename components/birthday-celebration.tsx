@@ -32,14 +32,13 @@ export const BirthdayCelebration = () => {
         const count = 200;
         const defaults = {
           origin: { y: 0.7 },
-          spread: 360,
           ticks: 100,
           gravity: 0.8,
           decay: 0.94,
           startVelocity: 30,
         };
 
-        function fire(particleRatio: number, opts: any) {
+        function fire(particleRatio: number, opts: Partial<confetti.Options>) {
           confetti({
             ...defaults,
             ...opts,
