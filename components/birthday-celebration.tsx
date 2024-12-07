@@ -178,27 +178,34 @@ export const BirthdayCelebration = () => {
                 >
                   <div className="space-y-4 md:space-y-6">
                     <p className="text-base md:text-lg lg:text-xl text-right text-pink-900 font-arabic leading-relaxed" dir="rtl">
-                      في يوم ميلادك، أحب أقولك إن وجودك في حياتي هو أكبر هدية لي. أنتِ نجمتي المضيئة، وابتسامتك أجمل ما يزين أيامي.
+                      في يوم زي دا، الدنيا ابتسمت وقررت تهدي للعالم شخص جميل زيك. 🎉
                     </p>
 
                     <p className="text-base md:text-lg lg:text-xl text-pink-800 leading-relaxed">
-                      May your days be filled with as much joy, love, and light as you bring into my life.
+                      Happy Birthday to the one who makes my world brighter just by being in it.
                     </p>
 
                     <p className="text-base md:text-lg lg:text-xl text-right text-pink-900 font-arabic leading-relaxed" dir="rtl">
-                      أنتِ كل الأشياء الحلوة مجتمعة، وكل يوم معك هو عيد بالنسبة لي.
+                      وجودك في حياتي مش مجرد وجود عادي.
+                    </p>
+
+                    <p className="text-base md:text-lg lg:text-xl text-right text-pink-900 font-arabic leading-relaxed" dir="rtl">
+                      زي الفراشة، خفيفة ورقيقة، بتنشري السعادة في كل مكان حواليك.
                     </p>
 
                     <p className="text-base md:text-lg lg:text-xl text-pink-800 leading-relaxed">
-                      Thank you for being the amazing person you are.
-                    </p>
-
-                    <p className="text-base md:text-lg lg:text-xl text-right text-pink-900 font-arabic leading-relaxed" dir="rtl">
-                      أنا محظوظ إنك في حياتي، وأتمنى ليكي سنة مليانة سعادة وأمان وكل حاجة بتحلمي بيها. 💖✨
+                      May this year bring you as much joy, love, and magic as you've brought into my life.
                     </p>
 
                     <div className="mt-4 md:mt-6 p-4 bg-gradient-to-r from-pink-500/10 via-purple-500/10 to-pink-500/10 rounded-lg">
                       <p className="text-base md:text-lg lg:text-xl text-right text-pink-900 font-arabic leading-relaxed" dir="rtl">
+                        كل سنة وأنتِ أرق وأجمل فراشة تحلق في سماء أيامي، وأتمنى ليكي كل حاجة بتستاهليها وأكتر كمان، لأنك بجد تستاهلي كل خير وسعادة. 💖
+                      </p>
+                    </div>
+
+                    <div className="mt-4 md:mt-6 p-4 bg-gradient-to-r from-pink-500/10 via-purple-500/10 to-pink-500/10 rounded-lg">
+                      <p className="text-base md:text-lg lg:text-xl text-right text-pink-900 font-arabic leading-relaxed" dir="rtl">
+                        And remember: مهما مرّ العمر، ستبقين دائمًا في قلبي<br/>
                         كل عامٍ وأنتِ قمرٌ يتوهج في سماء العمر،<br/>
                         نورُكِ يملأ القلب ويُضيء الدرب، يا أجمل من كل الزهر.
                       </p>
