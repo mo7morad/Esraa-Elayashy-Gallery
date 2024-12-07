@@ -15,15 +15,14 @@ export const BirthdayCelebration = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [audioInitialized, setAudioInitialized] = useState(false);
 
-  // Initialize audio on first user interaction
-  const initializeAudio = () => {
-    if (!audioInitialized) {
+  useEffect(() => {
+    if (isVisible && !audioInitialized) {
       initBirthdayMusic();
       playBirthdayMusic();
       setBirthdayMusicVolume(0.5);
       setAudioInitialized(true);
     }
-  };
+  }, [isVisible, audioInitialized]);
 
   useEffect(() => {
     if (isVisible) {
@@ -84,6 +83,7 @@ export const BirthdayCelebration = () => {
   }, [isVisible]);
 
   const handleClose = () => {
+    stopBirthdayMusic();
     setIsVisible(false);
   };
 
@@ -107,8 +107,7 @@ export const BirthdayCelebration = () => {
 
             {/* Content Container */}
             <div 
-              className="h-full w-full p-4 md:p-6 lg:p-8 overflow-hidden flex flex-col" 
-              onClick={initializeAudio}
+              className="h-full w-full p-4 md:p-6 lg:p-8 overflow-hidden flex flex-col"
             >
               {/* Floating Hearts Background */}
               <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -211,19 +210,6 @@ export const BirthdayCelebration = () => {
                     </div>
                   </div>
                 </motion.div>
-
-                {!audioInitialized && (
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 0.8, type: "spring" }}
-                    className="text-center flex-shrink-0"
-                  >
-                    <p className="inline-block px-4 md:px-6 py-2 md:py-3 bg-pink-500/20 rounded-full text-base md:text-lg text-pink-700">
-                      🎵 Click anywhere to play birthday music! 🎵
-                    </p>
-                  </motion.div>
-                )}
               </div>
             </div>
           </motion.div>

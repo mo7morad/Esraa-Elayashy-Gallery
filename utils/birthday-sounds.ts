@@ -5,8 +5,8 @@ let birthdayMusic: HTMLAudioElement | null = null;
 
 export const initBirthdayMusic = () => {
   if (typeof window !== 'undefined' && !birthdayMusic) {
-    birthdayMusic = new Audio('/sounds/happy-birthday.mp3');
-    birthdayMusic.loop = true;
+    birthdayMusic = new Audio('/sounds/happy-israa.mp3');
+    birthdayMusic.loop = false; // Don't loop the music
   }
 };
 
