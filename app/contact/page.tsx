@@ -86,7 +86,7 @@ export default function ContactPage() {
                       <div className="user-info">
                         <div className="avatar-wrapper">
                           <Image 
-                            src="./images/main.jpg" 
+                            src="/images/main.jpg" 
                             alt="Esraa ElAyashy"
                             width={50}
                             height={50}
