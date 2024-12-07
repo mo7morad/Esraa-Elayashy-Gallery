@@ -34,7 +34,7 @@ export default function InfoPage() {
           >
             <div className="relative aspect-[3/4] rounded-xl overflow-hidden">
               <Image
-                src="./images/selfie@27_May_2022.jpg"
+                src="/images/selfie@27_May_2022.jpg"
                 alt="Esraa ElAyashy"
                 layout="fill"
                 objectFit="cover"
