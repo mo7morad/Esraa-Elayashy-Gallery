@@ -5,14 +5,14 @@ let birthdayMusic: HTMLAudioElement | null = null;
 
 export const initBirthdayMusic = () => {
   if (typeof window !== 'undefined' && !birthdayMusic) {
-    birthdayMusic = new Audio('/sounds/happy-israa.mp3');
+    birthdayMusic = new Audio('/sounds/happy-birthday.mp3');
     birthdayMusic.loop = true;
   }
 };
 
 export const playBirthdayMusic = () => {
   if (birthdayMusic) {
-    birthdayMusic.volume = 0.6; // Set a comfortable default volume
+    birthdayMusic.volume = 0.8; // Set a comfortable default volume
     birthdayMusic.play().catch((error) => {
       console.error('Error playing birthday music:', error);
     });
