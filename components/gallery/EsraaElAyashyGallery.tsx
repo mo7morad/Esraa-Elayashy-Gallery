@@ -289,7 +289,7 @@ const images: ImageType[] = [
     src: "./images/1_facebook@3_March_2018.jpg",
     alt: "Placeholder",
     date: "March 3, 2018",
-    description: "One day we will find what we are looking for,\n or maybe not...\n maybe we'll find something much greater than we want",
+    description: "",
     category: "Category Placeholder"
   },
   {
@@ -304,7 +304,7 @@ const images: ImageType[] = [
     src: "./images/3_facebook@14_April_2018.jpg",
     alt: "Placeholder",
     date: "March 29, 2018",
-    description: "انطق جمالاً أو تجمل بالسكوت",
+    description: "✨ انطق جمالاً أو تجمل بالسكوت",
     category: "Category Placeholder"
   },
   {
@@ -319,7 +319,7 @@ const images: ImageType[] = [
     src: "./images/5_facebook@31_January_2019.jpg",
     alt: "Placeholder",
     date: "January 31, 2018",
-    description: "ببطء.. لكن بثبات وبنفس الطريقة التي يحول بها الخريف شكل الغابة، حولتني آلاف التغييرات الصغيرة إلى شخص آخر 🍂",
+    description: "ببطء.. لكن بثبات وبنفس الطريقة التي يحول بها الخريف شكل الغابة، حولتني آلاف التغييرات الصغيرة إلى شخص آخر  🍂",
     category: "Category Placeholder",
     isArabic: true
   },
@@ -327,7 +327,7 @@ const images: ImageType[] = [
     src: "./images/6_facebook@21_June_2019.jpg",
     alt: "Placeholder",
     date: "June 21, 2019",
-    description: "Placeholder description for Facebook Image 6",
+    description: "Bound by heart, held by hands, and nurtured like a rose. 🌺🫀",
     category: "Category Placeholder"
   },
 ]
@@ -373,7 +373,12 @@ function GalleryItem({ image, index }: { image: ImageType; index: number }) {
             "text-white text-center text-sm",
             image.isArabic && "text-right font-arabic"
           )}>
-            {image.description}
+            {image.description.split('\n').map((line, index) => (
+              <span key={index}>
+                {line}
+                <br />
+              </span>
+            ))}
           </p>
         </div>
       </div>
