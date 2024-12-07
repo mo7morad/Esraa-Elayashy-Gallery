@@ -6,7 +6,7 @@ import confetti from 'canvas-confetti';
 import { X } from 'lucide-react';
 import { initBirthdayMusic, playBirthdayMusic, stopBirthdayMusic } from '@/utils/birthday-sounds';
 
-export default function BirthdayCelebration() {
+export const BirthdayCelebration = () => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
