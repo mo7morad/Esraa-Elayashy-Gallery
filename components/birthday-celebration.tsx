@@ -4,30 +4,26 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { X } from 'lucide-react';
-import {
-  initBirthdayMusic,
-  playBirthdayMusic,
-  stopBirthdayMusic,
-  setBirthdayMusicVolume,
-} from '@/utils/birthday-sounds';
+import { initBirthdayMusic, playBirthdayMusic, stopBirthdayMusic } from '@/utils/birthday-sounds';
 
-export const BirthdayCelebration = () => {
+export default function BirthdayCelebration() {
   const [isVisible, setIsVisible] = useState(true);
-  const [audioInitialized, setAudioInitialized] = useState(false);
-
-  useEffect(() => {
-    if (isVisible && !audioInitialized) {
-      initBirthdayMusic();
-      playBirthdayMusic();
-      setBirthdayMusicVolume(0.5);
-      setAudioInitialized(true);
-    }
-  }, [isVisible, audioInitialized]);
 
   useEffect(() => {
     if (isVisible) {
-      // Create multiple confetti bursts
-      const runConfetti = () => {
+      // Initialize and play music
+      const playSound = async () => {
+        try {
+          await initBirthdayMusic();
+          await playBirthdayMusic();
+        } catch (error) {
+          console.error('Failed to play music:', error);
+        }
+      };
+      playSound();
+
+      // Setup celebration effects
+      const fireConfetti = () => {
         const count = 200;
         const defaults = {
           origin: { y: 0.7 },
@@ -45,22 +41,20 @@ export const BirthdayCelebration = () => {
           });
         }
 
+        // Launch multiple confetti bursts
         fire(0.25, {
           spread: 26,
           startVelocity: 55,
-          colors: ['#ff0000', '#ffd700', '#ff69b4'],
         });
 
         fire(0.2, {
           spread: 60,
-          colors: ['#00ff00', '#0099ff', '#ff1493'],
         });
 
         fire(0.35, {
           spread: 100,
           decay: 0.91,
           scalar: 0.8,
-          colors: ['#ff9999', '#99ff99', '#9999ff'],
         });
 
         fire(0.1, {
@@ -68,16 +62,24 @@ export const BirthdayCelebration = () => {
           startVelocity: 25,
           decay: 0.92,
           scalar: 1.2,
-          colors: ['#ff44ff', '#44ffff', '#ffff44'],
+        });
+
+        fire(0.1, {
+          spread: 120,
+          startVelocity: 45,
         });
       };
 
-      runConfetti();
-      const confettiInterval = setInterval(runConfetti, 4000);
+      // Initial confetti burst
+      fireConfetti();
 
+      // Set up interval for periodic confetti
+      const confettiInterval = setInterval(fireConfetti, 5000);
+
+      // Cleanup function
       return () => {
-        stopBirthdayMusic();
         clearInterval(confettiInterval);
+        stopBirthdayMusic();
       };
     }
   }, [isVisible]);
@@ -106,9 +108,7 @@ export const BirthdayCelebration = () => {
             </button>
 
             {/* Content Container */}
-            <div 
-              className="h-full w-full p-4 md:p-6 lg:p-8 overflow-hidden flex flex-col"
-            >
+            <div className="h-full w-full p-4 md:p-6 lg:p-8 overflow-hidden flex flex-col">
               {/* Floating Hearts Background */}
               <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 {[...Array(15)].map((_, i) => (
@@ -217,4 +217,4 @@ export const BirthdayCelebration = () => {
       )}
     </AnimatePresence>
   );
-};
+}
