@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "./providers/theme-provider"
 import { DotCursor } from "@/components/ui/cursor"
+import { BirthdayCelebration } from "@/components/birthday-celebration"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -26,6 +27,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <DotCursor />
+          <BirthdayCelebration />
           {children}
         </ThemeProvider>
       </body>
